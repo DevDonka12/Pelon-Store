@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto | Pelón Store UGC</title>
+    <meta name="description"
+        content="Contáctanos para soporte sobre UGC y artículos exclusivos. Discord, Instagram, WhatsApp y más." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles/styles.css" />
+    <link rel="icon" type="image/png" href="/src/assets/logo1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <style>
+        /* Estilos específicos para la página de contacto */
+        .contact-hero {
+            min-height: 350px;
+            height: auto;
+            padding: 100px 20px 60px;
+        }
+
+        .contact-hero .hero-content {
+            max-width: 700px;
+        }
+
+        .contact-grid-custom {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .contact-card {
+            background: var(--card-background);
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: 0 4px 20px var(--shadow-light);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px var(--shadow-light);
+        }
+
+        .contact-card:hover::before {
+            opacity: 1;
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            font-size: 2.5rem;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover .contact-icon {
+            transform: scale(1.1);
+        }
+
+        .contact-icon.discord {
+            background: linear-gradient(135deg, #5865F2 0%, #4752c4 100%);
+        }
+
+        .contact-icon.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .contact-icon.whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+        }
+
+        .contact-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .contact-card p {
+            color: var(--secondary-text-color);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: var(--background-light);
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover .contact-badge {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .info-section {
+            text-align: center;
+            margin: 60px 0 40px;
+            padding: 40px;
+            background: var(--card-background);
+            border-radius: 24px;
+            border: 1px solid var(--border-color);
+        }
+
+        .info-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        .info-section h3 i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .info-section p {
+            color: var(--secondary-text-color);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .payment-info-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .info-badge-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: var(--background-light);
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
+        }
+
+        .info-badge-item i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .info-badge-item span {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .info-badge-item small {
+            color: var(--secondary-text-color);
+            margin-left: 8px;
+        }
+
+        .copy-btn-contact {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            margin-left: 8px;
+        }
+
+        .copy-btn-contact:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .schedule-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .schedule-item {
+            text-align: center;
+        }
+
+        .schedule-emoji {
+            font-size: 2rem;
+        }
+
+        .schedule-title {
+            font-weight: 600;
+            margin-top: 10px;
+            color: var(--text-color);
+        }
+
+        .schedule-time {
+            color: var(--secondary-text-color);
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid-custom {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .contact-hero {
+                min-height: 300px;
+                padding: 80px 20px 40px;
+            }
+
+            .info-section {
+                padding: 30px 20px;
+            }
+
+            .payment-info-badge {
+                gap: 15px;
+            }
+
+            .info-badge-item {
+                padding: 10px 16px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-card {
+                padding: 25px 15px;
+            }
+
+            .contact-icon {
+                width: 65px;
+                height: 65px;
+                font-size: 2rem;
+            }
+
+            .contact-card h3 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- PRELOADER MEJORADO -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                <img src="/src/assets/logo1.png" alt="Pelón Store Logo" />
+            </div>
+            <div class="preloader-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+            </div>
+            <div class="preloader-text">
+                <span class="preloader-title">Pelón Store</span>
+                <span class="preloader-subtitle">Cargando UGC Exclusivos...</span>
+            </div>
+            <div class="preloader-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR MEJORADO -->
+    <nav class="navbar fixed-navbar">
+        <div class="navbar-container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="/src/assets/logo1.png" alt="Pelón Store Logo" />
+                <span class="logo-text">Pelón Store</span>
+            </div>
+
+            <!-- Menú de navegación principal -->
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Inicio</span>
+                </a>
+                <a href="index.html#featured" class="nav-link">
+                    <i class="fas fa-fire"></i>
+                    <span>Destacados</span>
+                </a>
+                <a href="index.html#paquetes" class="nav-link">
+                    <i class="fas fa-box"></i>
+                    <span>Catálogo UGC</span>
+                </a>
+                <a href="todos.html" class="nav-link">
+                    <i class="fas fa-list"></i>
+                    <span>Todos los Items</span>
+                </a>
+                <a href="contacto.html" class="nav-link active">
+                    <i class="fas fa-headset"></i>
+                    <span>Contacto</span>
+                </a>
+            </div>
+
+            <!-- Utilidades de navegación -->
+            <div class="nav-utils">
+                <!-- Búsqueda -->
+                <button id="search-toggle" class="nav-icon-btn" title="Buscar">
+                    <i class="fas fa-search"></i>
+                </button>
+
+                <!-- Tema oscuro/claro -->
+                <button id="theme-toggle" class="nav-icon-btn" title="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+
+                <!-- Carrito -->
+                <div class="cart-icon-wrapper">
+                    <button class="nav-icon-btn cart-icon" title="Carrito">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+
+                <!-- Menú usuario (opcional) -->
+                <button id="user-menu-toggle" class="nav-icon-btn" title="Mi cuenta">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+
+                <!-- Menú móvil -->
+                <button class="nav-toggle" id="nav-toggle" title="Menú">
+                    <span class="hamburger">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Barra de búsqueda expandible -->
+        <div class="search-bar" id="search-bar">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Buscar UGC, items exclusivos..." class="search-input">
+                <button class="search-close" id="search-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero contact-hero parallax-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-badge">💬 SOPORTE 24/7 💬</span>
+            <h1 class="fade-in-up">¡Estamos para Ayudarte!</h1>
+            <p class="fade-in-up delay-200">Encuentra todos nuestros canales de contacto y soporte. Respuesta rápida garantizada.</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="section-header reveal">
+            <h2 class="section-title">
+                <i class="fas fa-hashtag"></i> NUESTRAS REDES
+            </h2>
+            <p class="section-subtitle">Elige el canal que prefieras para contactarnos</p>
+        </div>
+
+        <div class="contact-grid-custom">
+            <!-- Discord -->
+            <a href="https://discord.com/invite/KjbQCNTPWd" target="_blank" class="contact-card reveal">
+                <div class="contact-icon discord">
+                    <i class="fab fa-discord"></i>
+                </div>
+                <h3>Discord</h3>
+                <p>Soporte rápido y comunidad activa. Respuesta en minutos.</p>
+                <span class="contact-badge">
+                    <i class="fas fa-headset"></i> Soporte 24/7
+                </span>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/pelon.shop" target="_blank" class="contact-card reveal" style="animation-delay: 0.1s;">
+                <div class="contact-icon instagram">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <h3>Instagram</h3>
+                <p>Síguenos para ver novedades y nuevos items exclusivos.</p>
+                <span class="contact-badge">
+                    <i class="fas fa-camera"></i> @pelon.shop
+                </span>
+            </a>
+        </div>
+
+        <!-- Información de Pago -->
+        <div class="info-section reveal">
+            <h3>
+                <i class="fas fa-credit-card"></i>
+                Información de Pago
+            </h3>
+            <p>Para agilizar tu compra, ten a mano estos datos al momento de contactarnos:</p>
+            
+            <div class="payment-info-badge">
+                <div class="info-badge-item">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Alias:</span>
+                    <small id="alias-text">joasz16</small>
+                    <button class="copy-btn-contact" data-copy="joasz16" title="Copiar alias">
+                        <i class="far fa-copy"></i>
+                    </button>
+                </div>
+                <div class="info-badge-item">
+                    <i class="fas fa-barcode"></i>
+                    <span>CVU:</span>
+                    <small id="cvu-text">0000003100019492380130</small>
+                    <button class="copy-btn-contact" data-copy="0000003100019492380130" title="Copiar CVU">
+                        <i class="far fa-copy"></i>
+                    </button>
+                </div>
+                <div class="info-badge-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Mercado Pago</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Horario de Atención -->
+        <div class="info-section reveal" style="margin-top: 30px;">
+            <h3>
+                <i class="fas fa-clock"></i>
+                Horario de Atención
+            </h3>
+            <div class="schedule-container">
+                <div class="schedule-item">
+                    <span class="schedule-emoji">🌞</span>
+                    <p class="schedule-title">Lunes a Viernes</p>
+                    <p class="schedule-time">10:00 - 22:00 ARG</p>
+                </div>
+                <div class="schedule-item">
+                    <span class="schedule-emoji">🌙</span>
+                    <p class="schedule-title">Sábados y Domingos</p>
+                    <p class="schedule-time">12:00 - 20:00 ARG</p>
+                </div>
+                <div class="schedule-item">
+                    <span class="schedule-emoji">⚡</span>
+                    <p class="schedule-title">Soporte Discord</p>
+                    <p class="schedule-time">Respuesta 24/7</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL DEL CARRITO -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content cart-content">
+            <span class="modal-close-btn cart-close-btn">&times;</span>
+            <div class="payment-header">
+                <i class="fas fa-shopping-bag"></i>
+                <h2>Tu Carrito de UGC</h2>
+            </div>
+            
+            <div id="cart-items-container" class="cart-items-container">
+                <p id="empty-cart-message" style="text-align: center; padding: 20px; color: var(--text-color-secondary);">
+                    Tu carrito está vacío. ¡Añade algunos artículos UGC!
+                </p>
+            </div>
+
+            <div class="cart-summary">
+                <div class="summary-line">
+                    <span>Subtotal:</span>
+                    <strong id="cart-subtotal">$0 ARS</strong>
+                </div>
+                <div class="summary-line total-line">
+                    <span>Total a Pagar:</span>
+                    <strong id="cart-total">$0 ARS</strong>
+                </div>
+            </div>
+
+            <button id="checkout-button" class="cta-button pulse-effect" disabled>
+                <i class="fas fa-check-circle"></i> CONTINUAR AL PAGO
+            </button>
+            <p class="small-text-note">Al continuar, aceptas la compra de todos los artículos listados.</p>
+        </div>
+    </div>
+
+    <!-- MODAL DE PAGO REDISEÑADO -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content payment-content">
+            <span class="modal-close-btn payment-close-btn">&times;</span>
+            
+            <div class="payment-header">
+                <i class="fas fa-gem"></i>
+                <h2>Finalizar Compra</h2>
+                <p class="payment-subtitle">Completa el pago para recibir tu UGC</p>
+            </div>
+
+            <div class="payment-body">
+                <!-- Paso 1: Pago -->
+                <div class="payment-step">
+                    <div class="step-header">
+                        <span class="step-number">1</span>
+                        <h3>Realiza el Pago</h3>
+                    </div>
+                    
+                    <div class="payment-box">
+                        <div class="payment-methods">
+                            <span class="payment-method-badge">
+                                <i class="fas fa-mobile-alt"></i> Mercado Pago
+                            </span>
+                            <span class="payment-method-badge">
+                                <i class="fas fa-university"></i> Transferencia
+                            </span>
+                        </div>
+                        
+                        <div class="alias-container">
+                            <div class="alias-item">
+                                <span class="alias-label">
+                                    <i class="fas fa-user-circle"></i> Alias
+                                </span>
+                                <span class="alias-value" id="payment-alias-display">joasz16</span>
+                                <button class="copy-btn" data-copy="joasz16" title="Copiar alias">
+                                    <i class="far fa-copy"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="alias-item">
+                                <span class="alias-label">
+                                    <i class="fas fa-barcode"></i> CVU
+                                </span>
+                                <span class="alias-value" id="payment-cvu-display">0000003100019492380130</span>
+                                <button class="copy-btn" data-copy="0000003100019492380130" title="Copiar CVU">
+                                    <i class="far fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-note">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Asegúrate de enviar el monto exacto para evitar demoras</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 2: Resumen y Contacto -->
+                <div class="payment-step">
+                    <div class="step-header">
+                        <span class="step-number">2</span>
+                        <h3>Envía tu Comprobante</h3>
+                    </div>
+                    
+                    <div class="product-summary">
+                        <div class="product-summary-header">
+                            <span class="total-label">Total a Pagar</span>
+                            <span class="total-amount" id="payment-total-amount">$0 ARS</span>
+                        </div>
+                        
+                        <div class="product-list" id="payment-product-list">
+                        </div>
+                    </div>
+                    
+                    <div class="contact-section">
+                        <p class="contact-title">Contáctanos con la captura del pago</p>
+                        
+                        <div class="contact-grid" style="display: flex; gap: 15px; justify-content: center;">
+                            <a href="https://discord.com/invite/KjbQCNTPWd" target="_blank" class="contact-btn discord-btn">
+                                <i class="fab fa-discord"></i>
+                                <span>Discord</span>
+                                <small>Soporte Rápido</small>
+                            </a>
+                            <a href="https://www.instagram.com/pelon.shop" target="_blank" class="contact-btn instagram-btn">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                                <small>Síguenos</small>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="final-message">
+                        <p>
+                            <i class="fas fa-heart"></i>
+                            ¡Gracias por confiar en Pelón Store!
+                            <i class="fas fa-heart"></i>
+                        </p>
+                        <p style="font-size: 0.85rem; margin-top: 10px;">
+                            Entrega inmediata · Soporte 24/7 · 100% Seguro
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE IMAGEN -->
+    <div id="image-modal" class="modal">
+        <span class="modal-close-btn">&times;</span>
+        <img class="modal-content" id="full-image" alt="Imagen Completa del Producto">
+        <div id="image-caption"></div>
+    </div>
+
+    <!-- FOOTER MEJORADO -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-gem"></i> Pelón Store</h3>
+                <p>Tu tienda de confianza para UGC exclusivos y artículos limitados de Roblox. Calidad garantizada y entrega inmediata.</p>
+                <div class="social-links">
+                    <a href="https://discord.com/invite/KjbQCNTPWd" target="_blank"><i class="fab fa-discord"></i></a>
+                    <a href="https://www.instagram.com/pelon.shop" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <a href="index.html#featured">Destacados</a>
+                <a href="index.html#paquetes">Catálogo</a>
+                <a href="todos.html">Todos los Items</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+            <div class="footer-section">
+                <h4>Soporte</h4>
+                <p><i class="fas fa-clock"></i> 24/7 Disponible</p>
+                <p><i class="fas fa-shield-alt"></i> Pago 100% Seguro</p>
+                <p><i class="fas fa-truck"></i> Entrega Inmediata</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Pelón Store. Todos los derechos reservados.<br>
+        </div>
+    </footer>
+
+    <script src="/src/js/script.js"></script>
+    
+    <script>
+        // Funcionalidad de copiado para la página de contacto
+        document.querySelectorAll('.copy-btn-contact').forEach(btn => {
+            btn.addEventListener('click', async (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const textToCopy = btn.dataset.copy;
+                
+                try {
+                    await navigator.clipboard.writeText(textToCopy);
+                    
+                    // Feedback visual
+                    const originalHTML = btn.innerHTML;
+                    btn.innerHTML = '<i class="fas fa-check"></i>';
+                    btn.style.background = '#10b981';
+                    btn.style.color = 'white';
+                    
+                    setTimeout(() => {
+                        btn.innerHTML = originalHTML;
+                        btn.style.background = '';
+                        btn.style.color = '';
+                    }, 2000);
+                    
+                    // Mostrar toast
+                    const toast = document.createElement('div');
+                    toast.style.cssText = `
+                        position: fixed;
+                        bottom: 30px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        background: var(--gradient-primary);
+                        color: white;
+                        padding: 12px 24px;
+                        border-radius: 50px;
+                        font-weight: 500;
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+                        z-index: 10000;
+                        animation: slideUp 0.3s ease;
+                    `;
+                    toast.textContent = '¡Copiado al portapapeles!';
+                    document.body.appendChild(toast);
+                    
+                    setTimeout(() => {
+                        toast.style.opacity = '0';
+                        toast.style.transition = 'opacity 0.3s ease';
+                        setTimeout(() => toast.remove(), 300);
+                    }, 2000);
+                } catch (err) {
+                    console.error('Error al copiar:', err);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
