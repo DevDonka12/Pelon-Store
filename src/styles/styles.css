@@ -1101,8 +1101,6 @@ h4 {
   border: 2px solid var(--secondary-color);
 }
 
-
-
 /* --- PAGINATION --- */
 .pagination-controls {
   display: flex;
@@ -2081,210 +2079,6 @@ h4 {
   }
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 1100px) {
-  .nav-link span {
-    display: none;
-  }
-  .nav-link {
-    padding: 12px;
-  }
-  .nav-link i {
-    font-size: 1.3rem;
-    margin: 0;
-  }
-}
-
-@media (max-width: 900px) {
-  body {
-    padding-top: 70px;
-  }
-  .navbar-container {
-    padding: 0 20px;
-    height: 70px;
-  }
-  .nav-toggle {
-    display: flex;
-  }
-
-  .nav-links {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    background: var(--card-background);
-    padding: 20px;
-    gap: 8px;
-    transform: translateX(-100%);
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border-bottom: 1px solid var(--border-color);
-    max-height: calc(100vh - 70px);
-    overflow-y: auto;
-    margin: 0;
-    z-index: 998;
-    box-shadow: 0 10px 30px var(--shadow-light);
-  }
-
-  .nav-links.active {
-    transform: translateX(0);
-  }
-  .nav-link {
-    width: 100%;
-    padding: 15px 20px;
-    justify-content: flex-start;
-  }
-  .nav-link span {
-    display: inline;
-  }
-  .logo-text {
-    font-size: 1.2rem;
-  }
-  .nav-icon-btn {
-    width: 40px;
-    height: 40px;
-  }
-  #user-menu-toggle {
-    display: none;
-  }
-
-  .hero {
-    min-height: 400px;
-    padding-top: 100px;
-  }
-  .hero-stats {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .ugc-card {
-    flex-direction: column;
-  }
-  .ugc-card-content {
-    padding: 30px;
-  }
-  .carousel-container {
-    height: auto;
-    min-height: 500px;
-  }
-  .slider-btn {
-    width: 40px;
-    height: 40px;
-  }
-  .prev-btn {
-    left: 10px;
-  }
-  .next-btn {
-    right: 10px;
-  }
-  .package-grid {
-    grid-template-columns: 1fr;
-  }
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer {
-    padding: 40px 20px 0;
-  }
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 35px;
-    text-align: center;
-  }
-  .footer-section h4::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .footer-section a {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .footer-section a::before {
-    display: none;
-  }
-  .footer-section a:hover {
-    transform: translateX(0) scale(1.05);
-  }
-  .footer-section p {
-    justify-content: center;
-  }
-  .social-links {
-    justify-content: center;
-  }
-  .copyright br {
-    display: block;
-  }
-  .cart-item {
-    flex-wrap: wrap;
-  }
-  .item-total {
-    text-align: left;
-  }
-
-  #image-modal .modal-content {
-    max-width: 95%;
-    max-height: 80vh;
-  }
-  #image-caption {
-    bottom: 20px;
-    font-size: 0.9rem;
-    padding: 10px 20px;
-  }
-  #payment-modal .modal-content.payment-content {
-    margin: 10px;
-    max-width: none;
-  }
-  #payment-modal .payment-header {
-    padding: 25px 20px;
-  }
-  .payment-body {
-    padding: 20px;
-  }
-  .alias-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-  .copy-btn {
-    align-self: flex-end;
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar-container {
-    padding: 0 15px;
-  }
-  .logo img {
-    height: 35px;
-    width: 35px;
-  }
-  .logo-text {
-    display: none;
-  }
-  .nav-utils {
-    gap: 4px;
-  }
-  .preloader-logo img {
-    width: 80px;
-    height: 80px;
-  }
-  .preloader-title {
-    font-size: 1.5rem;
-  }
-  .footer {
-    padding: 30px 15px 0;
-  }
-  .footer-section h3 {
-    font-size: 1.4rem;
-    justify-content: center;
-  }
-  .social-links a {
-    width: 40px;
-    height: 40px;
-    font-size: 1.1rem;
-  }
-  
-}
 /* ============================================
    TARJETA PRÓXIMAMENTE - DISEÑO GLASS PREMIUM
    ============================================ */
@@ -2293,11 +2087,13 @@ h4 {
   position: relative !important;
   border: none !important;
   overflow: hidden !important;
-  background: linear-gradient(145deg, 
-    rgba(255, 255, 255, 0.95) 0%, 
-    rgba(250, 245, 255, 0.98) 100%) !important;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(250, 245, 255, 0.98) 100%
+  ) !important;
   backdrop-filter: blur(20px) !important;
-  box-shadow: 
+  box-shadow:
     0 20px 50px -10px rgba(139, 92, 246, 0.15),
     0 0 0 1px rgba(139, 92, 246, 0.08) inset,
     0 0 0 1px rgba(255, 255, 255, 0.5) !important;
@@ -2306,10 +2102,12 @@ h4 {
 }
 
 :root[data-theme="dark"] .coming-soon-card {
-  background: linear-gradient(145deg, 
-    rgba(30, 25, 40, 0.98) 0%, 
-    rgba(25, 20, 35, 0.98) 100%) !important;
-  box-shadow: 
+  background: linear-gradient(
+    145deg,
+    rgba(30, 25, 40, 0.98) 0%,
+    rgba(25, 20, 35, 0.98) 100%
+  ) !important;
+  box-shadow:
     0 20px 50px -10px rgba(0, 0, 0, 0.4),
     0 0 0 1px rgba(139, 92, 246, 0.15) inset,
     0 0 0 1px rgba(255, 255, 255, 0.03) !important;
@@ -2317,17 +2115,19 @@ h4 {
 
 /* Efecto de brillo en borde */
 .coming-soon-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 200%;
   height: 100%;
-  background: linear-gradient(90deg, 
-    transparent, 
-    rgba(139, 92, 246, 0.1), 
-    rgba(236, 72, 153, 0.1), 
-    transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(139, 92, 246, 0.1),
+    rgba(236, 72, 153, 0.1),
+    transparent
+  );
   transform: skewX(-15deg);
   animation: cardShine 8s ease-in-out infinite;
   z-index: 1;
@@ -2335,13 +2135,18 @@ h4 {
 }
 
 @keyframes cardShine {
-  0%, 100% { left: -100%; }
-  50% { left: 0%; }
+  0%,
+  100% {
+    left: -100%;
+  }
+  50% {
+    left: 0%;
+  }
 }
 
 /* Esquinas decorativas */
 .coming-soon-card::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 10px;
   right: 10px;
@@ -2361,10 +2166,22 @@ h4 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.06) 0%, transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(236, 72, 153, 0.04) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(139, 92, 246, 0.06) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(236, 72, 153, 0.04) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.4) 0%,
+      transparent 70%
+    );
   z-index: 2;
   pointer-events: none;
   display: flex;
@@ -2375,9 +2192,11 @@ h4 {
 
 /* Badge - Diseño pill premium */
 .coming-soon-badge {
-  background: linear-gradient(135deg, 
-    rgba(139, 92, 246, 0.15) 0%, 
-    rgba(236, 72, 153, 0.1) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.15) 0%,
+    rgba(236, 72, 153, 0.1) 100%
+  );
   backdrop-filter: blur(10px);
   color: var(--primary-color);
   padding: 6px 16px;
@@ -2386,7 +2205,7 @@ h4 {
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  box-shadow: 
+  box-shadow:
     0 2px 10px rgba(0, 0, 0, 0.05),
     0 0 0 1px rgba(139, 92, 246, 0.2);
   border: none;
@@ -2399,11 +2218,16 @@ h4 {
 }
 
 @keyframes badgeGlow {
-  0%, 100% { 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(139, 92, 246, 0.2);
+  0%,
+  100% {
+    box-shadow:
+      0 2px 10px rgba(0, 0, 0, 0.05),
+      0 0 0 1px rgba(139, 92, 246, 0.2);
   }
-  50% { 
-    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.15), 0 0 0 1px rgba(139, 92, 246, 0.4);
+  50% {
+    box-shadow:
+      0 4px 15px rgba(139, 92, 246, 0.15),
+      0 0 0 1px rgba(139, 92, 246, 0.4);
   }
 }
 
@@ -2414,9 +2238,16 @@ h4 {
 }
 
 @keyframes iconSpin {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(15deg); }
-  75% { transform: rotate(-15deg); }
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
 }
 
 /* Imagen */
@@ -2432,31 +2263,42 @@ h4 {
 
 /* Círculos decorativos en fondo */
 .coming-soon-img::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 150px;
   height: 150px;
-  background: radial-gradient(circle, 
-    rgba(139, 92, 246, 0.08) 0%, 
-    transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.08) 0%,
+    transparent 70%
+  );
   border-radius: 50%;
   animation: pulseGlow 4s ease-in-out infinite;
   z-index: 1;
 }
 
 @keyframes pulseGlow {
-  0%, 100% { transform: scale(1); opacity: 0.5; }
-  50% { transform: scale(1.2); opacity: 0.8; }
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
 }
 
 .coming-soon-img::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100px;
   height: 100px;
-  background: radial-gradient(circle, 
-    rgba(236, 72, 153, 0.06) 0%, 
-    transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(236, 72, 153, 0.06) 0%,
+    transparent 70%
+  );
   border-radius: 50%;
   top: 60%;
   left: 70%;
@@ -2465,9 +2307,16 @@ h4 {
 }
 
 @keyframes floatAround {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-20px, -15px) scale(1.1); }
-  66% { transform: translate(10px, 20px) scale(0.9); }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-20px, -15px) scale(1.1);
+  }
+  66% {
+    transform: translate(10px, 20px) scale(0.9);
+  }
 }
 
 /* Icono central - Estilo premium */
@@ -2477,14 +2326,16 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(145deg, 
-    rgba(255, 255, 255, 0.9) 0%, 
-    rgba(250, 245, 255, 0.8) 100%);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(250, 245, 255, 0.8) 100%
+  );
   backdrop-filter: blur(10px);
   border-radius: 28px;
   position: relative;
   border: 1.5px solid rgba(139, 92, 246, 0.2);
-  box-shadow: 
+  box-shadow:
     0 15px 35px -10px rgba(139, 92, 246, 0.15),
     0 0 0 1px rgba(255, 255, 255, 0.8) inset,
     0 0 20px rgba(139, 92, 246, 0.1);
@@ -2494,58 +2345,85 @@ h4 {
 }
 
 :root[data-theme="dark"] .coming-soon-icon {
-  background: linear-gradient(145deg, 
-    rgba(40, 30, 50, 0.9) 0%, 
-    rgba(30, 20, 40, 0.8) 100%);
+  background: linear-gradient(
+    145deg,
+    rgba(40, 30, 50, 0.9) 0%,
+    rgba(30, 20, 40, 0.8) 100%
+  );
   border-color: rgba(139, 92, 246, 0.3);
-  box-shadow: 
+  box-shadow:
     0 15px 35px -10px rgba(0, 0, 0, 0.3),
     0 0 0 1px rgba(139, 92, 246, 0.2) inset,
     0 0 20px rgba(139, 92, 246, 0.15);
 }
 
 @keyframes iconFloat {
-  0%, 100% { transform: translateY(0) scale(1); }
-  25% { transform: translateY(-4px) scale(1.02); }
-  50% { transform: translateY(2px) scale(0.99); }
-  75% { transform: translateY(-2px) scale(1.01); }
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-4px) scale(1.02);
+  }
+  50% {
+    transform: translateY(2px) scale(0.99);
+  }
+  75% {
+    transform: translateY(-2px) scale(1.01);
+  }
 }
 
 .coming-soon-icon i {
   font-size: 3.2rem;
-  background: linear-gradient(135deg, 
-    var(--primary-color) 0%, 
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
     var(--accent-color) 50%,
-    #ff6b6b 100%);
+    #ff6b6b 100%
+  );
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: iconGradient 4s ease infinite, iconSparkle 2s ease-in-out infinite;
+  animation:
+    iconGradient 4s ease infinite,
+    iconSparkle 2s ease-in-out infinite;
 }
 
 @keyframes iconGradient {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 @keyframes iconSparkle {
-  0%, 100% { filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.3)); }
-  50% { filter: drop-shadow(0 0 20px rgba(236, 72, 153, 0.5)); }
+  0%,
+  100% {
+    filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(236, 72, 153, 0.5));
+  }
 }
 
 /* Badge de rareza */
 .rarity-badge.mystery {
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.9) 0%, 
-    rgba(250, 245, 255, 0.9) 100%) !important;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(250, 245, 255, 0.9) 100%
+  ) !important;
   backdrop-filter: blur(10px);
   color: var(--primary-color) !important;
   font-weight: 700;
   font-size: 0.6rem;
   letter-spacing: 1.5px;
   padding: 4px 12px !important;
-  box-shadow: 
+  box-shadow:
     0 4px 12px rgba(0, 0, 0, 0.05),
     0 0 0 1px rgba(139, 92, 246, 0.15);
   border: none;
@@ -2554,24 +2432,35 @@ h4 {
 }
 
 :root[data-theme="dark"] .rarity-badge.mystery {
-  background: linear-gradient(135deg, 
-    rgba(40, 30, 50, 0.9) 0%, 
-    rgba(30, 20, 40, 0.9) 100%) !important;
+  background: linear-gradient(
+    135deg,
+    rgba(40, 30, 50, 0.9) 0%,
+    rgba(30, 20, 40, 0.9) 100%
+  ) !important;
 }
 
 @keyframes rarityPulse {
-  0%, 100% { opacity: 0.9; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.03); }
+  0%,
+  100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
 }
 
 /* Detalles */
-.package-details {
+.coming-soon-card .package-details {
   position: relative;
   z-index: 2;
   padding: 20px 18px 18px !important;
-  background: linear-gradient(180deg, 
-    transparent 0%, 
-    rgba(139, 92, 246, 0.02) 100%) !important;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(139, 92, 246, 0.02) 100%
+  ) !important;
   border-top: 1px solid rgba(139, 92, 246, 0.08);
 }
 
@@ -2592,7 +2481,11 @@ h4 {
 .coming-soon-title i {
   color: var(--primary-color);
   font-size: 1rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -2686,9 +2579,11 @@ h4 {
 }
 
 .coming-soon-card .buy-now-btn {
-  background: linear-gradient(135deg, 
-    rgba(139, 92, 246, 0.5) 0%, 
-    rgba(236, 72, 153, 0.4) 100%) !important;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.5) 0%,
+    rgba(236, 72, 153, 0.4) 100%
+  ) !important;
   border: none !important;
   color: white !important;
   font-weight: 550;
@@ -2704,9 +2599,11 @@ h4 {
 
 .coming-soon-card .buy-now-btn:hover {
   opacity: 0.85;
-  background: linear-gradient(135deg, 
-    rgba(139, 92, 246, 0.6) 0%, 
-    rgba(236, 72, 153, 0.5) 100%) !important;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.6) 0%,
+    rgba(236, 72, 153, 0.5) 100%
+  ) !important;
 }
 
 .coming-soon-card .add-to-cart-btn i,
@@ -2731,14 +2628,14 @@ h4 {
 /* Hover effects en tarjeta */
 .coming-soon-card:hover {
   transform: translateY(-8px) scale(1.01) !important;
-  box-shadow: 
+  box-shadow:
     0 30px 60px -10px rgba(139, 92, 246, 0.2),
     0 0 0 1px rgba(139, 92, 246, 0.15) inset,
     0 0 0 1px rgba(255, 255, 255, 0.6) !important;
 }
 
 :root[data-theme="dark"] .coming-soon-card:hover {
-  box-shadow: 
+  box-shadow:
     0 30px 60px -10px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba(139, 92, 246, 0.25) inset,
     0 0 0 1px rgba(255, 255, 255, 0.05) !important;
@@ -2746,7 +2643,7 @@ h4 {
 
 .coming-soon-card:hover .coming-soon-icon {
   transform: translateY(-3px) scale(1.03);
-  box-shadow: 
+  box-shadow:
     0 20px 40px -10px rgba(139, 92, 246, 0.2),
     0 0 0 1px rgba(139, 92, 246, 0.3) inset,
     0 0 25px rgba(139, 92, 246, 0.15);
@@ -2763,8 +2660,8 @@ h4 {
 }
 
 /* Decoración de esquina inferior */
-.package-details::before {
-  content: '';
+.coming-soon-card .package-details::before {
+  content: "";
   position: absolute;
   bottom: 10px;
   left: 10px;
@@ -2777,38 +2674,416 @@ h4 {
   pointer-events: none;
 }
 
-/* Responsive */
-@media (max-width: 480px) {
+/* --- RESPONSIVE --- */
+@media (max-width: 1100px) {
+  .nav-link span {
+    display: none;
+  }
+  .nav-link {
+    padding: 12px;
+  }
+  .nav-link i {
+    font-size: 1.3rem;
+    margin: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  body {
+    padding-top: 70px;
+  }
+  .navbar-container {
+    padding: 0 20px;
+    height: 70px;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--card-background);
+    padding: 20px;
+    gap: 8px;
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom: 1px solid var(--border-color);
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    margin: 0;
+    z-index: 998;
+    box-shadow: 0 10px 30px var(--shadow-light);
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+  .nav-link {
+    width: 100%;
+    padding: 15px 20px;
+    justify-content: flex-start;
+  }
+  .nav-link span {
+    display: inline;
+  }
+  .logo-text {
+    font-size: 1.2rem;
+  }
+  .nav-icon-btn {
+    width: 40px;
+    height: 40px;
+  }
+  #user-menu-toggle {
+    display: none;
+  }
+
+  .hero {
+    min-height: 400px;
+    padding-top: 100px;
+  }
+  .hero-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Ajuste del carrusel destacado para móvil */
+  .carousel-container {
+    height: auto;
+    min-height: auto;
+    margin-bottom: 20px;
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  .carousel-track-container {
+    height: auto;
+    min-height: 480px;
+    border-radius: 16px;
+  }
+
+  .carousel-track {
+    height: 100%;
+  }
+
+  .carousel-slide {
+    height: 100%;
+  }
+
+  .ugc-card {
+    flex-direction: column;
+    min-height: 480px;
+  }
+
+  .ugc-card-image {
+    flex: 0 0 auto;
+    height: 200px;
+    padding: 20px;
+    background: linear-gradient(
+      135deg,
+      var(--background-light),
+      var(--card-background)
+    );
+  }
+
+  .ugc-card-image img {
+    max-height: 160px;
+    width: auto;
+  }
+
+  .ugc-card-content {
+    flex: 1 1 auto;
+    padding: 25px 20px;
+    min-height: auto;
+  }
+
+  .ugc-card-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .ugc-description {
+    font-size: 0.9rem;
+  }
+
+  .ugc-price .amount {
+    font-size: 1.5rem;
+  }
+
+  /* Botones del slider mejor posicionados */
+  .slider-btn {
+    width: 40px;
+    height: 40px;
+    top: 30%;
+  }
+
+  .prev-btn {
+    left: 5px;
+  }
+
+  .next-btn {
+    right: 5px;
+  }
+
+  /* Badges para móvil */
+  .ugc-badge {
+    top: 15px;
+    left: 15px;
+    padding: 4px 12px;
+    font-size: 0.7rem;
+  }
+
+  .package-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    padding: 40px 20px 0;
+  }
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    text-align: center;
+  }
+  .footer-section h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .footer-section a {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer-section a::before {
+    display: none;
+  }
+  .footer-section a:hover {
+    transform: translateX(0) scale(1.05);
+  }
+  .footer-section p {
+    justify-content: center;
+  }
+  .social-links {
+    justify-content: center;
+  }
+  .copyright br {
+    display: block;
+  }
+  .cart-item {
+    flex-wrap: wrap;
+  }
+  .item-total {
+    text-align: left;
+  }
+
+  #image-modal .modal-content {
+    max-width: 95%;
+    max-height: 80vh;
+  }
+  #image-caption {
+    bottom: 20px;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+  #payment-modal .modal-content.payment-content {
+    margin: 10px;
+    max-width: none;
+  }
+  #payment-modal .payment-header {
+    padding: 25px 20px;
+  }
+  .payment-body {
+    padding: 20px;
+  }
+  .alias-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .copy-btn {
+    align-self: flex-end;
+  }
+
+  /* Ajustes coming-soon para móvil */
   .coming-soon-icon {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .coming-soon-icon i {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0 15px;
+  }
+  .logo img {
+    height: 35px;
+    width: 35px;
+  }
+  .logo-text {
+    display: none;
+  }
+  .nav-utils {
+    gap: 4px;
+  }
+  .preloader-logo img {
+    width: 80px;
+    height: 80px;
+  }
+  .preloader-title {
+    font-size: 1.5rem;
+  }
+
+  /* Ajustes más específicos para pantallas muy pequeñas */
+  .carousel-container {
+    margin: 0;
+    padding: 0 10px;
+  }
+
+  .carousel-track-container {
+    min-height: 430px;
+    border-radius: 12px;
+  }
+
+  .ugc-card {
+    min-height: 430px;
+  }
+
+  .ugc-card-image {
+    height: 170px;
+    padding: 15px;
+  }
+
+  .ugc-card-image img {
+    max-height: 140px;
+  }
+
+  .ugc-card-content {
+    padding: 18px 15px;
+  }
+
+  .ugc-card-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+
+  .ugc-description {
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+
+  .ugc-price .amount {
+    font-size: 1.3rem;
+  }
+
+  .ugc-category {
+    font-size: 0.75rem;
+    margin-bottom: 6px;
+  }
+
+  /* Slider buttons más compactos */
+  .slider-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+    top: 28%;
+  }
+
+  .prev-btn {
+    left: 2px;
+  }
+
+  .next-btn {
+    right: 2px;
+  }
+
+  /* Indicadores del carrusel más pequeños */
+  .carousel-nav {
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .carousel-indicator {
+    width: 8px;
+    height: 8px;
+  }
+
+  .carousel-indicator.current-slide {
+    width: 24px;
+  }
+
+  /* Sección header más compacta */
+  .section-header {
+    margin: 35px 0 20px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+
+  /* Package grid para pantallas pequeñas */
+  .package-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .footer {
+    padding: 30px 15px 0;
+  }
+  .footer-section h3 {
+    font-size: 1.4rem;
+    justify-content: center;
+  }
+  .social-links a {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  /* Coming soon ajustes */
+  .coming-soon-icon {
+    width: 85px;
+    height: 85px;
     border-radius: 22px;
   }
-  
+
   .coming-soon-icon i {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
   }
-  
+
   .coming-soon-badge {
     font-size: 0.6rem;
-    padding: 5px 12px;
+    padding: 5px 10px;
     letter-spacing: 1px;
   }
-  
+
   .coming-soon-title {
     font-size: 1.1rem;
   }
-  
+
   .coming-soon-price {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
-  
+
   .coming-soon-card::after {
     width: 30px;
     height: 30px;
   }
-  
-  .package-details::before {
+
+  .coming-soon-card .package-details::before {
     width: 25px;
     height: 25px;
   }
